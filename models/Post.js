@@ -22,10 +22,6 @@ Post.init(
                 len: [1]
             }
         },
-        picture:{
-            type: DataTypes.BLOB,
-            allowNull: true
-        },
         date_created:{
             type: DataTypes.DATE,
             allowNull: false,
@@ -37,7 +33,7 @@ Post.init(
             defaultValue: 0
         },
         rating:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL(1,2),
             allowNull: false,
             defaultValue: 0
         },
