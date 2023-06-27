@@ -33,7 +33,7 @@ Post.init(
             defaultValue: 0
         },
         rating:{
-            type: DataTypes.DECIMAL(1,2),
+            type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 0
         },
