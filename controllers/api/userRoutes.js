@@ -2,8 +2,8 @@ const router = require('express').Router();
 const passport = require('../../config/passport');
 const { Comment, Post, User } = require('../../models');
 
-router.use(passport.initialize());
-router.use(passport.session());
+//router.use(passport.initialize());
+//router.use(passport.session());
 
 router.post('/', async (req, res) => {
   try {
@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/login', passport.authenticate('local', { successRedirect: 'posts' }), async (req, res) => {
+router.post('/login', /*passport.authenticate('local', { successRedirect: 'posts' }),*/ async (req, res) => {
 try {
     const userData = await User.findOne({
       where: {
@@ -74,7 +74,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-passport.serializeUser(function (user, done) {
+/*passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
 
@@ -83,6 +83,6 @@ passport.deserializeUser(function (id, done) {
     done(err, user);
   })
 }) 
-
+*/
 module.exports = router;
   
