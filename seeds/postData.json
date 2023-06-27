@@ -2,6 +2,8 @@
     {
         "title": "Boulevard - Space Camper",
         "post_text": "This is a great beer. It's a little hoppy, but not too much.",
+        "date_created": "6/26/2023",
+        "likes": 200,
         "rating": 4.75,
         "user_id": 1
     }

@@ -22,7 +22,7 @@ Post.init(
                 len: [1]
             }
         },
-        date_created:{
+       date_created:{
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW
@@ -33,7 +33,7 @@ Post.init(
             defaultValue: 0
         },
         rating:{
-            type: DataTypes.DECIMAL(1,2),
+            type: DataTypes.DECIMAL(3,2),
             allowNull: false,
             defaultValue: 0
         },
