@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Comment, Post, User } = require('../../models');
-router.get('/', async (req, res) => {
+const checkAuthenticated = require('../../utils/checkAuthenticated');
+
+router.get('/', checkAuthenticated, async (req, res) => {
     const postData = await Post.findAll({include: [
       {
         model: Comment,
@@ -13,10 +15,10 @@ router.get('/', async (req, res) => {
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render("postListing", posts);
+    res.render("posts", posts);
     });
 //get a post specified by id along with its comments
-router.get('/:id', async (req, res) => {
+router.get('/:id', checkAuthenticated, async (req, res) => {
   try{ 
       const postData = await Post.findByPk(req.params.id,
         {include: [
@@ -34,13 +36,12 @@ router.get('/:id', async (req, res) => {
       }
       const post = postData.get({ plain: true });
    //   res.render('post', post);
-    res.json(postData);
     } catch (err) {
         res.status(500).json(err);
     };     
 });
 //create a new post
-router.post('/', async (req, res) => {
+router.post('/', checkAuthenticated, async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,

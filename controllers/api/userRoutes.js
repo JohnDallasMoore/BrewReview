@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const passport = require('passport');
 const { Comment, Post, User } = require('../../models');
+const checkNotAuthenticated = require('../../utils/checkNotAuthenticated');
+const checkAuthenticated = require('../../utils/checkAuthenticated');
+
 
 
 const initializePassport = require('../../config/passport.js');
@@ -8,7 +11,7 @@ initializePassport(passport,
   email => User.findAll(user => user.email === email),
   id => User.findAll(user => user.id === id)); 
 
-router.post('/', async (req, res) => {
+router.post('/', checkNotAuthenticated, async (req, res) => {
   try {
     const userData = await User.create({
       name: req.body.name,
@@ -19,6 +22,8 @@ router.post('/', async (req, res) => {
     // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.name = userData.name;
+      req.session.id = userData.id;
 
       res.status(200).json(userData);
     });
@@ -28,7 +33,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/login', /*passport.authenticate('local', { successRedirect: 'posts' }),*/ async (req, res) => {
+router.post('/login', checkNotAuthenticated, async (req, res) => {
 try {
     const userData = await User.findOne({
       where: {
@@ -55,6 +60,8 @@ try {
     // Once the user successfully logs in, set up the sessions variable 'loggedIn'
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.name = userData.name;
+      req.session.id = userData.id;
 
       res
         .status(200)
@@ -66,8 +73,7 @@ try {
   }
 });
 
-router.post('/logout', (req, res) => {
-  // When the user logs out, destroy the session
+router.post('/logout', checkAuthenticated, (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -77,15 +83,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-/*passport.serializeUser(function (user, done) {
-  done(null, user.id);
-});
 
-passport.deserializeUser(function (id, done) {
-  User.findByPk(id, function(err, user) {
-    done(err, user);
-  })
-}) 
-*/
+
 module.exports = router;
   
