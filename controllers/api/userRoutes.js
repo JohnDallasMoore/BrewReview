@@ -19,7 +19,6 @@ router.post('/', checkNotAuthenticated, async (req, res) => {
       password: req.body.password,
     });
 
-    // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.name = userData.name;
@@ -57,15 +56,12 @@ try {
       return;
     }
 
-    // Once the user successfully logs in, set up the sessions variable 'loggedIn'
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.name = userData.name;
       req.session.id = userData.id;
 
-      res
-        .status(200)
-        .json({ user: userData, message: 'You are now logged in!' });
+      res.redirect('/api/posts');
     });
   } catch (err) {
     console.log(err);
