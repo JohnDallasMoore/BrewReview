@@ -1,9 +1,12 @@
 const router = require('express').Router();
-const passport = require('../../config/passport');
+const passport = require('passport');
 const { Comment, Post, User } = require('../../models');
 
-//router.use(passport.initialize());
-//router.use(passport.session());
+
+const initializePassport = require('../../config/passport.js');
+initializePassport(passport, 
+  email => User.findAll(user => user.email === email),
+  id => User.findAll(user => user.id === id)); 
 
 router.post('/', async (req, res) => {
   try {
