@@ -11,6 +11,26 @@ initializePassport(passport,
   email => User.findAll(user => user.email === email),
   id => User.findAll(user => user.id === id)); 
 
+router.get('/profile', checkNotAuthenticated, async (req, res) => {
+    try {
+      const userData = await User.findByPk(req.session.id, {include: [
+            {
+                model: Post,
+            }
+        ]}
+        );
+        if(!userData) {
+            res.status(404).json({message: 'No user with this id!'});
+            return;
+        }
+        const user = userData.get({ plain: true });
+        res.render('/profile', user);
+      } catch (err) {
+          res.status(500).json(err);
+      };     
+    }
+);
+
 router.post('/', checkNotAuthenticated, async (req, res) => {
   try {
     const userData = await User.create({
