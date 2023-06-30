@@ -1,6 +1,6 @@
 <section class="bg-center bg-cover  bg-no-repeat  bg-gray-700 bg-blend-multiply">
             <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-24">
-                <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Welcome back, {{post.user.name}}!</h1>
+                <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Welcome back, {{name}}!</h1>
                 <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Join the Brew Review community! Start sharing your thoughts and experiences of different beers today. Get started now to make your first post. Cheers!</p>
                 <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                     <a href="/signup" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
@@ -16,8 +16,8 @@
         </div>
 
         {{!-- Figure out how to only pull up individual users post --}}
-
-        {{#each post as |posts| }}
+        {{#if posts}}
+        {{#each posts as |post|}}
         <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-800">
             <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
                 <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
@@ -25,7 +25,7 @@
                         <address class="flex items-center mb-6 not-italic">
                             <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                                 <div>
-                                    <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">{{post.user.name}}</a>
+                                    <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">{{name}}</a>
                                     <p class="text-base font-light text-gray-500 dark:text-gray-400">{{post.date_created}}</p>
                                 </div>
                             </div>
@@ -45,4 +45,9 @@
                 </article>
             </div>
         </main>  
-        {{/each}}
+        {{/each}} 
+        {{else}}
+        <div class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-800">
+          <p class="text-xl font-bold text-gray-900 dark:text-white text-center">There are no reviews here yet!</p>
+        </div>
+        {{/if}}

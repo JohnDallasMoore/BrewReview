@@ -13,7 +13,7 @@ initializePassport(passport,
 
 router.get('/profile', checkNotAuthenticated, async (req, res) => {
     try {
-      const userData = await User.findByPk(req.session.id, {include: [
+       const userData = await User.findByPk(req.session.userId, {include: [
             {
                 model: Post,
             }
@@ -24,7 +24,8 @@ router.get('/profile', checkNotAuthenticated, async (req, res) => {
             return;
         }
         const user = userData.get({ plain: true });
-        res.render('/profile', user);
+        console.log(user);
+        res.render('profile', user);
       } catch (err) {
           res.status(500).json(err);
       };     
@@ -39,13 +40,16 @@ router.post('/', checkNotAuthenticated, async (req, res) => {
       password: req.body.password,
     });
 
+    const user = userData.get({ plain: true });
+
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.name = userData.name;
-      req.session.id = userData.id;
+      req.session.name = user.name;
+      req.session.userId = user.id;
 
       res.status(200).json(userData);
     });
+    res.render('profile', user);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -59,6 +63,9 @@ try {
         email: req.body.email,
       },
     });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
 
     if (!userData) {
       res
@@ -78,8 +85,8 @@ try {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.name = userData.name;
-      req.session.id = userData.id;
+      req.session.name = user.name;
+      req.session.userId = user.id;
 
       res.redirect('/api/posts');
     });
