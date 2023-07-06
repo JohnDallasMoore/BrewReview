@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
-      res.redirect('/');
+      res.redirect('/api/users/profile');
       return;
   }
     // Otherwise, render the 'login' template
@@ -32,7 +32,7 @@ router.get('/login', (req, res) => {
   router.get('/signup', (req, res) => {
     // If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
-      res.redirect('/');
+      res.redirect('/api/users/profile');
       return;
   }
     // Otherwise, render the 'login' template
