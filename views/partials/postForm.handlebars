@@ -1,0 +1,67 @@
+<section class="bg-gray-900 px-4 lg:px-96 py-8 lg:py-16">
+    <div>
+        <h2 class="mb-4 text-center text-4xl tracking-tight font-extrabold text-white">Post a Review</h2>
+        <form action="">
+            
+            <div class="mb-6">
+                <label for="beer-name-input" class="block mb-2 text-sm font-medium text-white">Beer Name:</label>
+                <input type="text" id="beer-name-input" class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Boulevard Space Camper IPA">
+            </div>
+
+            
+            <div class="mb-6">
+                <label for="beer-review" class="block mb-2 text-sm font-medium text-white">Review:</label>
+                <textarea id="beer-review" rows="4" class="block p-2.5 w-full text-sm  rounded-lg border  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Write your review here..."></textarea>
+            </div>
+
+
+            <div class="mb-6">
+                
+                <label for="rating-range" class="block mb-2 text-sm font-medium text-white">Rating:</label>
+                <input id="rating-range" type="range" min="0" max="5" value="2.5" step="0.25" class="w-full h-2 rounded-lg appearance-none cursor-pointer bg-gray-700">
+                
+                <div class="flex justify-between text-sm font-medium text-white">
+                    <span class="text-lg">0</span>
+                    <span class="text-xs">|</span>
+                    <span class="text-lg">|</span>
+                    <span class="text-xs">|</span>
+                    <span class="text-lg">1</span>
+                    <span class="text-xs">|</span>
+                    <span class="text-lg">|</span>
+                    <span class="text-xs">|</span>
+                    <span class="text-lg">2</span>
+                    <span class="text-xs">|</span>
+                    <span class="text-lg">|</span>
+                    <span class="text-xs">|</span>
+                    <span class="text-lg">3</span>
+                    <span class="text-xs">|</span>
+                    <span class="text-lg">|</span>
+                    <span class="text-xs">|</span>
+                    <span class="text-lg">4</span>
+                    <span class="text-xs">|</span>
+                    <span class="text-lg">|</span>
+                    <span class="text-xs">|</span>
+                    <span class="text-lg">5</span>
+                </div>
+            </div>
+
+            
+            <label for="dropzone-file" class="block mb-2 text-sm font-medium text-white">Upload Image:</label>
+            <div class="flex items-center justify-center w-full">
+                <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer  bg-gray-700  border-gray-600 hover:border-gray-500 hover:bg-gray-600">
+                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                        <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                        <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                        <p class="text-xs text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                    </div>
+                    <input id="dropzone-file" type="file" class="hidden" />
+                </label>
+            </div> 
+
+        </form>
+        <button type="submit"
+            class="inline-flex items-center mt-8 py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-blue-800">
+            Post review
+        </button>
+    </div>
+</section>
