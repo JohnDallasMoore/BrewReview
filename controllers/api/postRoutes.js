@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Comment, Post, User } = require('../../models');
 const checkAuthenticated = require('../../utils/checkAuthenticated');
 
-router.get('/', checkAuthenticated, async (req, res) => {
+router.get('/dashboard', checkAuthenticated, async (req, res) => {
   try{
     const postData = await Post.findAll({include: [
       {
@@ -21,7 +21,7 @@ router.get('/', checkAuthenticated, async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-    });
+  });
 //get a post specified by id along with its comments
 router.get('/:id', checkAuthenticated, async (req, res) => {
   try{ 
@@ -40,12 +40,16 @@ router.get('/:id', checkAuthenticated, async (req, res) => {
           return;
       }
       const post = postData.get({ plain: true });
-   //   res.render('post', post);
+      req.session.save(() => {
+        req.session.post_id = post.id;
+      });
     } catch (err) {
         res.status(500).json(err);
     };     
 });
+
 //create a new post
+
 router.post('/', checkAuthenticated, async (req, res) => {
   try {
     const newPost = await Post.create({
@@ -57,4 +61,18 @@ router.post('/', checkAuthenticated, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.post('/:id/comments', async (req, res) => {
+  try {
+    const newComment= await Comment.create({
+      ...req.body,
+      user_id: req.session.user_id,
+      post_id: req.session.post_id,
+    });
+    res.status(200).json(newComment);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
