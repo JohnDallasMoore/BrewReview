@@ -11,7 +11,7 @@ function newPostButton(event) {
 };
 
 // function for newPostFormHandler
-function newPostFormHandler(event) {
+const  newPostFormHandler = async (event) => {
     event.preventDefault();
 
     const beerName = document.querySelector('#beer-name-input').value.trim();
@@ -39,13 +39,13 @@ function newPostFormHandler(event) {
             alert('Failed to create post');
         }
     }
-}
+};
 
 // function for commentFormHandler
 function commentFormHandler(event) {
     event.preventDefault();
 
-}
+};
 
 // function for commentButton
 function commentButton(event) {
