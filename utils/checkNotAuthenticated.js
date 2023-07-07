@@ -1,5 +1,5 @@
 const checkNotAuthenticated = (req, res, next) => {
-    if(req.session.isLoggedIn) {
+    if(req.session.loggedIn) {
         res.redirect('/');
     } else {
         return next();

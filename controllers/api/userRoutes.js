@@ -11,7 +11,7 @@ initializePassport(passport,
   email => User.findAll(user => user.email === email),
   id => User.findAll(user => user.id === id)); 
 
-router.get('/profile', checkNotAuthenticated, async (req, res) => {
+router.get('/profile', checkAuthenticated, async (req, res) => {
     try {
        const userData = await User.findByPk(req.session.userId, {include: [
             {
@@ -31,7 +31,7 @@ router.get('/profile', checkNotAuthenticated, async (req, res) => {
     }
 );
 
-router.post('/', checkNotAuthenticated, async (req, res) => {
+router.post('/', checkAuthenticated, async (req, res) => {
   try {
     const userData = await User.create({
       name: req.body.name,
