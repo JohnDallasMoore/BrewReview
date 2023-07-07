@@ -24,7 +24,7 @@ router.get('/profile', checkNotAuthenticated, async (req, res) => {
             return;
         }
         const user = userData.get({ plain: true });
-        res.render('profile', user);
+        res.render('profile', { user, loggedIn: req.session.loggedIn });
       } catch (err) {
           res.status(500).json(err);
       };     
@@ -48,7 +48,7 @@ router.post('/', checkNotAuthenticated, async (req, res) => {
 
       res.status(200).json(userData);
     });
-    res.render('profile', user);
+    res.render('profile', { user, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
