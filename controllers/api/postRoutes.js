@@ -16,33 +16,14 @@ router.get('/', checkAuthenticated, async (req, res) => {
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render("posts", posts);
+    res.render("posts", { posts, loggedIn: req.session.loggedIn });
   } catch {
     console.log(err);
     res.status(500).json(err);
   }
   });
 
-  router.get('/dashboard', checkAuthenticated, async (req, res) => {
-    try{
-      const postData = await Post.findAll({include: [
-        {
-          model: Comment,
-        },
-        {
-          model: User,
-        }
-      ]}).catch((err) => { 
-        res.json(err);
-      });
   
-      const posts = postData.map((post) => post.get({ plain: true }));
-      res.render("posts", posts);
-    } catch {
-      console.log(err);
-      res.status(500).json(err);
-    }
-    });
 //get a post specified by id along with its comments
 router.get('/:id', checkAuthenticated, async (req, res) => {
   try{ 
