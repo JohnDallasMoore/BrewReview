@@ -2,26 +2,27 @@ const router = require('express').Router();
 const { Comment, Post, User } = require('../../models');
 const checkAuthenticated = require('../../utils/checkAuthenticated');
 
-router.get('/', checkAuthenticated, async (req, res) => {
-  try{
-    const postData = await Post.findAll({include: [
-      {
-        model: Comment,
-      },
-      {
-        model: User,
-      }
-    ]}).catch((err) => { 
-      res.json(err);
-    });
+// router.get('/', checkAuthenticated, async (req, res) => {
+//   try{
+//     const postData = await Post.findAll({include: [
+//       {
+//         model: Comment,
+//       },
+//       {
+//         model: User,
+//       }
+//     ]}).catch((err) => { 
+//       res.json(err);
+//     });
 
-    const posts = postData.map((post) => post.get({ plain: true }));
-    res.render("posts", { posts, loggedIn: req.session.loggedIn });
-  } catch {
-    console.log(err);
-    res.status(500).json(err);
-  }
-  });
+//     const posts = postData.map((post) => post.get({ plain: true }));
+//     console.log(posts);
+//     res.render("posts", { posts, loggedIn: req.session.loggedIn });
+//   } catch {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+//   });
 
   
 //get a post specified by id along with its comments
