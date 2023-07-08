@@ -45,11 +45,11 @@
                 <button type="button" id="login-button" class=" text-white  focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Login</button>
                 {{/if}}
             </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+            <div class="pr-28 items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
                 <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0  bg-gray-800 md:bg-gray-900 border-gray-700">
                 {{#if loggedIn}}
                 <li>
-                    <a href="/api/posts/" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-500 md:p-0" aria-current="page">Dashboard</a>
+                    <a href="/api/posts/" class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white border-gray-700" aria-current="page">Dashboard</a>
                 </li>
                 <li>
                     <a href="/api/users/profile" class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white border-gray-700">Profile</a>
@@ -65,7 +65,7 @@
       <footer class="shadow bg-gray-900">
           <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
               <div class="sm:flex sm:items-center sm:justify-between">
-                  <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
+                  <a href="/" class="flex items-center mb-4 sm:mb-0">
                       <img src="/images/BrewReviewLogo.svg" class="h-8 mr-3" alt="Brew Review Logo" />
                       <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Brew Review</span>
                   </a>
@@ -85,7 +85,7 @@
                   </ul>
               </div>
               <hr class="my-6 sm:mx-auto border-gray-700 lg:my-8" />
-              <span class="block text-sm sm:text-center text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Brew Review</a>. All Rights Reserved.</span>
+              <span class="block text-sm sm:text-center text-gray-400">© 2023 <a href="/" class="hover:underline">Brew Review</a>. All Rights Reserved.</span>
           </div>
       </footer>
     </div>
