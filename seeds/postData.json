@@ -15,7 +15,7 @@
         "likes": 16,
         "rating": 4.75,
         "file_name": "beer2",
-        "user_id": 1
+        "user_id": 2
     },
     {
         "title": "Servaes Brewing - Rosemary Raspberry Sour",
@@ -24,7 +24,7 @@
         "likes": 8,
         "rating": 4.25,
         "file_name": "beer3",
-        "user_id": 1
+        "user_id": 3
     },
     {
         "title": "Social Project - Learn To Fly Sour",
@@ -33,7 +33,7 @@
         "likes": 4,
         "rating": 3.5,
         "file_name": "beer4",
-        "user_id": 2
+        "user_id": 4
     },
     {
         "title": "WeldWorks - Blueberry Cobbler Sour",
@@ -42,7 +42,7 @@
         "likes": 18,
         "rating": 4.75,
         "file_name": "beer5",
-        "user_id": 2
+        "user_id": 1
     },
     {
         "title": "Narrow Gauge - Up Down Left Right IPA",
@@ -69,7 +69,7 @@
         "likes": 11,
         "rating": 4,
         "file_name": "beer8",
-        "user_id": 3
+        "user_id": 4
     },
     {
         "title": "Surly Brewing - In The Fade IPA",
@@ -78,7 +78,7 @@
         "likes": 13,
         "rating": 4.75,
         "file_name": "beer9",
-        "user_id": 3
+        "user_id": 1
     },
     {
         "title": "Toppling Goliath - Radiant Haze IPA",
@@ -87,16 +87,16 @@
         "likes": 17,
         "rating": 4.5,
         "file_name": "beer10",
-        "user_id": 4
+        "user_id": 2
     },
     {
         "title": "Roughtail Brewing - Daylight DIPA",
         "post_text": "Daylight DIPA by Roughtail Brewing is a hop lover's dream. With its robust hop profile and balanced malt backbone, this Double IPA shines with citrus, pine, and tropical flavors, creating a bold and satisfying drinking experience.",
         "date_created": "6/29/2023",
         "likes": 5,
-        "rating": 3,
+        "rating": 3.75,
         "file_name": "beer11",
-        "user_id": 4
+        "user_id": 3
     },
     {
         "title": "Narrow Gauge - J.U.I.C.E. IPA",

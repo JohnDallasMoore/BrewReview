@@ -39,7 +39,7 @@
                 <button id="comment-button" class="text-sm font-medium underline hover:no-underline text-white comment-buttons">Comments</button>
             </div>
             <div id="comment-input" class="hidden">
-                {{> addComment}}
+                {{> addComment post_id=post.id}}
                 {{#each post.comments as |comment|}}
                     {{> postComment name=comment.user.name}}
                 {{/each}}

@@ -19,7 +19,7 @@ const  newPostFormHandler = async (event) => {
     const beerName = document.querySelector('#beer-name-input').value.trim();
     const beerReview = document.querySelector('#beer-review-input').value.trim();
     const beerRating = document.querySelector('#beer-rating-input').value;
-    const beerImage = "beer1"; 
+    const beerImage = "beer13"; 
     const date = new Date();
 
     if (beerName && beerReview && beerRating && beerImage && date) {
@@ -51,9 +51,10 @@ const commentFormHandler = async (event) => {
 
     event.preventDefault();
 
-        const comment_text = document.getElementById('new-comment').value.trim();
-        const post_id = document.getElementById('post-id').textContent;
+        const comment_text = event.currentTarget.querySelector('textarea').value; //document.querySelector('.new-comment').value.trim();
+        const post_id = event.currentTarget.querySelector('textarea').getAttribute("data") //document.getElementById('post-id').textContent;
         const date = new Date();
+        
 
         console.log(post_id);
     
@@ -71,7 +72,7 @@ const commentFormHandler = async (event) => {
             });
 
             if (response.ok) {
-            document.location.replace('/profile');
+            document.location.reload();
             } else {
                 alert('Failed to create comment');
             }

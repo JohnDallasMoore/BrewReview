@@ -31,7 +31,7 @@ initializePassport(passport,
 //     }
 // );
 
-router.post('/', checkAuthenticated, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const userData = await User.create({
       name: req.body.name,
