@@ -1,7 +1,22 @@
 [
     {
-        "name": "Hugh",
+        "name": "Hugh Tompkins",
         "email": "hugh@gmail.com",
         "password": "password1234"
+    },
+    {
+        "name": "Dallas Moore",
+        "email": "dallas@gmail.com",
+        "password": "password1234"
+    },
+    {
+        "name": "Michaela Brown",
+        "email": "michaela@gmail.com",
+        "password": "password1234"
+    },
+    {
+        "name": "Chase Miller",
+        "email": "chase@gmail.com",
+        "password": "password1234"
     }
-  ]
+]

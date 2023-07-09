@@ -37,6 +37,10 @@ Post.init(
             allowNull: false,
             defaultValue: 0
         },
+        file_name:{
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         user_id:{
             type: DataTypes.INTEGER,
             allowNull: false,
