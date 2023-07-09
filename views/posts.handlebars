@@ -11,7 +11,7 @@
 
 {{#if posts}}
 {{#each posts as |post|}}
-<main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-gray-800">
+<main class="pt-4 pb-8 lg:pt-8 lg:pb-12 bg-gray-800">
     <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
         <article class="border-4 rounded-lg p-8 border-gray-700 mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
             <header class="mb-4 lg:mb-6 not-format">
@@ -27,7 +27,7 @@
             </header>
             <p class="text-base font-light text-gray-400">{{post.post_text}}</p>
             <br>
-            <figure><img src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png" alt="">
+            <figure><img class="mx-auto object-contain h-96 w-96" src="{{post.file_name}}.jpeg" alt="">
             </figure>
             <br>
             <div class="flex items-center">
@@ -43,7 +43,9 @@
             
             <div id="comment-input" class="hidden">
                 {{> addComment}}
-                {{> postComment}}
+                {{#each post.comments as |comment|}}
+                    {{> postComment name=../../user.name}}
+                {{/each}}
             </div>
 
             
