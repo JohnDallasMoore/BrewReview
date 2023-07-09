@@ -1,8 +1,123 @@
 [
     {
-        "comment_text": "Sounds great!",
-        "user_id": 1,
-        "post_id": 1,
-        "date": "7/1/2023"
+      "comment_text": "I can't wait to try this rare breed wheat beer from Happy Basset!",
+      "user_id": 1,
+      "post_id": 1,
+      "date": "7/1/2023"
+    },
+    {
+      "comment_text": "This wheat beer sounds like a must-try for beer enthusiasts!",
+      "user_id": 2,
+      "post_id": 1,
+      "date": "7/2/2023"
+    },
+    {
+      "comment_text": "Bold flavors and a balanced bitterness? Sign me up for this IPA!",
+      "user_id": 1,
+      "post_id": 2,
+      "date": "7/1/2023"
+    },
+    {
+      "comment_text": "As a beer connoisseur, I'm excited to try this delightful IPA.",
+      "user_id": 2,
+      "post_id": 2,
+      "date": "7/2/2023"
+    },
+    {
+      "comment_text": "A unique concoction with tangy raspberries and aromatic rosemary? Intriguing!",
+      "user_id": 1,
+      "post_id": 3,
+      "date": "7/1/2023"
+    },
+    {
+      "comment_text": "The blend of raspberries and rosemary in this sour beer is intriguing.",
+      "user_id": 2,
+      "post_id": 3,
+      "date": "7/2/2023"
+    },
+    {
+      "comment_text": "A tangy and refreshing sour beer? Count me in for a taste!",
+      "user_id": 3,
+      "post_id": 4,
+      "date": "7/1/2023"
+    },
+    {
+      "comment_text": "Subtle fruity notes in this sour beer make it a perfect choice.",
+      "user_id": 1,
+      "post_id": 4,
+      "date": "7/2/2023"
+    },
+    {
+      "comment_text": "Delectable treat indeed! Blueberries and cinnamon in a sour beer sound amazing.",
+      "user_id": 2,
+      "post_id": 5,
+      "date": "7/1/2023"
+    },
+    {
+      "comment_text": "The blend of juicy blueberries and cinnamon in this sour beer is mouthwatering.",
+      "user_id": 3,
+      "post_id": 5,
+      "date": "7/2/2023"
+    },
+    {
+      "comment_text": "A hop-forward delight that takes your taste buds on a flavorful journey.",
+      "user_id": 1,
+      "post_id": 6,
+      "date": "7/1/2023"
+    },
+    {
+      "comment_text": "The balanced blend of citrusy and piney flavors in this IPA is enticing.",
+      "user_id": 2,
+      "post_id": 6,
+      "date": "7/2/2023"
+    },
+    {
+      "comment_text": "A hop lover's paradise indeed! The robust blend of citrusy and resinous flavors sounds amazing.",
+      "user_id": 3,
+      "post_id": 7,
+      "date": "7/1/2023"
+    },
+    {
+      "comment_text": "Citrusy and resinous flavors in this IPA are sure to leave a lingering satisfaction.",
+      "user_id": 1,
+      "post_id": 7,
+      "date": "7/2/2023"
+    },
+    {
+      "comment_text": "A captivating brew with a well-balanced hop profile and refreshing citrusy and floral notes.",
+      "user_id": 2,
+      "post_id": 8,
+      "date": "7/1/2023"
+    },
+    {
+      "comment_text": "Time stopping with every sip? This IPA from Lua Brewing is a must-try.",
+      "user_id": 3,
+      "post_id": 8,
+      "date": "7/2/2023"
+    },
+    {
+      "comment_text": "Exceptional brew indeed! The bold hop character with piney and tropical flavors sounds delightful.",
+      "user_id": 1,
+      "post_id": 9,
+      "date": "7/1/2023"
+    },
+    {
+      "comment_text": "Smooth and satisfying from start to finish! This IPA from Surly Brewing sounds amazing.",
+      "user_id": 2,
+      "post_id": 9,
+      "date": "7/2/2023"
+    },
+    {
+      "comment_text": "Radiant Haze IPA from Toppling Goliath is a true gem. Bursting with juicy tropical flavors and a silky smooth mouthfeel.",
+      "user_id": 4,
+      "post_id": 10,
+      "date": "7/1/2023"
+    },
+    {
+      "comment_text": "The refreshing and vibrant taste of J.U.I.C.E. IPA from Narrow Gauge keeps you coming back for more. A hop bomb of juicy goodness!",
+      "user_id": 1,
+      "post_id": 12,
+      "date": "7/2/2023"
     }
-]
+  ]
+  

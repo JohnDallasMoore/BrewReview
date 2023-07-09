@@ -87,7 +87,7 @@ try {
       req.session.name = user.name;
       req.session.userId = user.id;
 
-      res.redirect('/api/posts');
+      res.redirect('/profile');
     });
   } catch (err) {
     console.log(err);
