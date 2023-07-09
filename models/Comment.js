@@ -33,6 +33,10 @@ Comment.init(
                 model: 'post',
                 key: 'id'
             }
+        },
+        date:{
+            type: DataTypes.DATE,
+            allowNull: false,
         }
     },
     {

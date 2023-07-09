@@ -53,7 +53,9 @@
             
             <div id="comment-input" class="hidden">
                 {{> addComment}}
-                {{> postComment}}
+                {{#each post.comments as |comment|}}
+                    {{> postComment name=../../user.name}}
+                {{/each}}
             </div>
 
             
