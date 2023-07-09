@@ -1,10 +1,110 @@
 [
     {
-        "title": "Boulevard - Space Camper",
-        "post_text": "This is a great beer. It's a little hoppy, but not too much.",
-        "date_created": "6/26/2023",
-        "likes": 200,
-        "rating": 4.75,
+        "title": "Happy Basset - Rare Breed Wheat",
+        "post_text": "This wheat beer from Happy Basset is a rare delight. Its smooth texture and refreshing flavors make it a must-try for wheat beer enthusiasts.",
+        "date_created": "6/30/2023",
+        "likes": 12,
+        "rating": 4.5,
+        "file_name": "beer1",
         "user_id": 1
+    },
+    {
+        "title": "Alma Mader - Between Coasts IPA",
+        "post_text": "Between Coasts IPA by Alma Mader is a hop lover's dream. Bursting with bold flavors and a balanced bitterness, this IPA is a true delight for any beer connoisseur.",
+        "date_created": "6/26/2023",
+        "likes": 16,
+        "rating": 4.75,
+        "file_name": "beer2",
+        "user_id": 1
+    },
+    {
+        "title": "Servaes Brewing - Rosemary Raspberry Sour",
+        "post_text": "Servaes Brewing's Rosemary Raspberry Sour is a unique and flavorful concoction. The tangy raspberries blend perfectly with the aromatic rosemary, creating a delightful sour beer experience.",
+        "date_created": "6/22/2023",
+        "likes": 8,
+        "rating": 4.25,
+        "file_name": "beer3",
+        "user_id": 1
+    },
+    {
+        "title": "Social Project - Learn To Fly Sour",
+        "post_text": "Learn To Fly Sour by Social Project is a tangy and refreshing delight. Its lively sourness is complemented by subtle fruity notes, making it a perfect choice for sour beer aficionados.",
+        "date_created": "6/30/2023",
+        "likes": 4,
+        "rating": 3.5,
+        "file_name": "beer4",
+        "user_id": 2
+    },
+    {
+        "title": "WeldWorks - Blueberry Cobbler Sour",
+        "post_text": "WeldWerks' Blueberry Cobbler Sour is a delectable treat. Bursting with juicy blueberries and a hint of cinnamon, this sour beer captures the essence of a delicious homemade cobbler.",
+        "date_created": "6/27/2023",
+        "likes": 18,
+        "rating": 4.75,
+        "file_name": "beer5",
+        "user_id": 2
+    },
+    {
+        "title": "Narrow Gauge - Up Down Left Right IPA",
+        "post_text": "Up Down Left Right IPA by Narrow Gauge is a hop-forward delight. With a balanced blend of citrusy and piney flavors, this IPA takes your taste buds on a flavorful journey in every sip.",
+        "date_created": "6/25/2023",
+        "likes": 22,
+        "rating": 5,
+        "file_name": "beer6",
+        "user_id": 2
+    },
+    {
+        "title": "Social Project - Western Sun IPA",
+        "post_text": "Western Sun IPA from Social Project is a hop lover's paradise. With its robust blend of citrusy and resinous flavors, this IPA shines brightly, leaving a lingering satisfaction on the palate.",
+        "date_created": "6/30/2023",
+        "likes": 15,
+        "rating": 4.25,
+        "file_name": "beer7",
+        "user_id": 3
+    },
+    {
+        "title": "Lua Brewing - Time Stops IPA",
+        "post_text": "Time Stops IPA by Lua Brewing is a captivating brew. Its well-balanced hop profile combines citrusy and floral notes, resulting in a refreshing and memorable IPA that makes time stand still.",
+        "date_created": "6/26/2023",
+        "likes": 11,
+        "rating": 4,
+        "file_name": "beer8",
+        "user_id": 3
+    },
+    {
+        "title": "Surly Brewing - In The Fade IPA",
+        "post_text": "In The Fade IPA by Surly Brewing is an exceptional brew. With its bold hop character, featuring piney and tropical flavors, this IPA delivers a smooth and satisfying experience from start to finish.",
+        "date_created": "6/25/2023",
+        "likes": 13,
+        "rating": 4.75,
+        "file_name": "beer9",
+        "user_id": 3
+    },
+    {
+        "title": "Toppling Goliath - Radiant Haze IPA",
+        "post_text": "Radiant Haze IPA from Toppling Goliath is a true gem. Bursting with juicy tropical flavors and a silky smooth mouthfeel, this IPA brings a radiant and refreshing experience with every sip.",
+        "date_created": "6/30/2023",
+        "likes": 17,
+        "rating": 4.5,
+        "file_name": "beer10",
+        "user_id": 4
+    },
+    {
+        "title": "Roughtail Brewing - Daylight DIPA",
+        "post_text": "Daylight DIPA by Roughtail Brewing is a hop lover's dream. With its robust hop profile and balanced malt backbone, this Double IPA shines with citrus, pine, and tropical flavors, creating a bold and satisfying drinking experience.",
+        "date_created": "6/29/2023",
+        "likes": 5,
+        "rating": 3,
+        "file_name": "beer11",
+        "user_id": 4
+    },
+    {
+        "title": "Narrow Gauge - J.U.I.C.E. IPA",
+        "post_text": "J.U.I.C.E. IPA from Narrow Gauge is a hop bomb of juicy goodness. Bursting with tropical fruit flavors and a smooth, hazy body, this IPA delivers a refreshing and vibrant taste that keeps you coming back for more.",
+        "date_created": "6/27/2023",
+        "likes": 19,
+        "rating": 4.5,
+        "file_name": "beer12",
+        "user_id": 4
     }
 ]
