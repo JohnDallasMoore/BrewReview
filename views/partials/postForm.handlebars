@@ -1,7 +1,7 @@
 <section class="bg-gray-900 px-4 lg:px-96 py-8 lg:py-16">
     <div>
         <h2 class="mb-4 text-center text-4xl tracking-tight font-extrabold text-white">Post a Review</h2>
-        <form action="/api/posts" method="post" id="new-post-form" enctype="multipart/form-data">
+        <form action="/api/posts" method="post" id="new-post-form">
             
             <div class="mb-6">
                 <label for="beer-name-input" class="block mb-2 text-sm font-medium text-white">Beer Name:</label>
@@ -45,10 +45,10 @@
                 </div>
             </div>
 
-        </form>
         <button type="submit"
             class="inline-flex items-center mt-8 py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-primary-900 hover:bg-blue-800">
             Post review
         </button>
+        </form>
     </div>
 </section>

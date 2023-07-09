@@ -1,3 +1,5 @@
+
+
 // function for newPostButton
 function newPostButton(event) {
     event.preventDefault();
@@ -50,9 +52,10 @@ const commentFormHandler = async (event) => {
     event.preventDefault();
 
         const comment_text = document.getElementById('new-comment').value.trim();
-        const post_id = 1;
+        const post_id = document.getElementById('post-id').textContent;
         const date = new Date();
 
+        console.log(post_id);
     
         if (comment_text && post_id && date) {
             const response = await fetch('/api/comments', {
