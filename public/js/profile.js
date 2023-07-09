@@ -79,22 +79,36 @@ const commentFormHandler = async (event) => {
 function commentButton(event) {
     event.preventDefault();
 
-    if (document.getElementById('comment-input').classList.contains('hidden')) {
-        document.getElementById('comment-input').classList.remove('hidden');
+    if (event.target.parentElement.parentElement.children[6].classList.contains('hidden')) {
+        event.target.parentElement.parentElement.children[6].classList.remove('hidden');
     }
     else {
-        document.getElementById('comment-input').classList.add('hidden');
-    }
+        event.target.parentElement.parentElement.children[6].classList.add('hidden');
+    };
+
 };
+
+
+
+document
+    .querySelectorAll('.comment-buttons')
+    .forEach(item => {
+        item.addEventListener('click', commentButton)
+    });
+
+// Event Listener for commentFormHandler
+
+document
+    .querySelectorAll('.comment-forms')
+    .forEach(item => {
+        item.addEventListener('submit', commentFormHandler);
+    });
+
 
 // Event Listener for newPostButton
 document
     .querySelector('#new-post-button')
     .addEventListener('click', newPostButton);
-
-document
-    .querySelector('#comment-button')
-    .addEventListener('click', commentButton);
 
 
 // Event Listener for newPostFormHandler
@@ -102,17 +116,4 @@ document
     .querySelector('#new-post-form')
     .addEventListener('submit', newPostFormHandler);
 
-// Event Listener for commentFormHandler
-document
-    .querySelectorAll('.comment-forms')
-    .forEach(item => {
-        item.addEventListener('submit', commentFormHandler);
-    });
-// Event Listener for commentButton
-/*
-document
-    .querySelectorAll('.comment-button')
-    .forEach(item => {
-        item.addEventListener('click', commentButton)
-    });
-*/
+
