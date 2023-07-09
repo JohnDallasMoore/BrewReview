@@ -16,17 +16,22 @@ const  newPostFormHandler = async (event) => {
 
     const beerName = document.querySelector('#beer-name-input').value.trim();
     const beerReview = document.querySelector('#beer-review-input').value.trim();
-    const beerRating = document.querySelector('#beer-rating-input').value.trim();
-    const beerImage = document.querySelector('#beer-image-input').value.trim();
+    const beerRating = document.querySelector('#beer-rating-input').value;
+    const beerImage = "beer1"; 
+    const userId = 1;
+    const date = new Date();
 
-    if (beerName && beerReview && beerRating && beerImage) {
+    if (beerName && beerReview && beerRating && beerImage && userId && date) {
         const response = await fetch('/api/posts', {
             method: 'POST',
             body: JSON.stringify({
-                beerName,
-                beerReview,
-                beerRating,
-                beerImage
+                title: beerName,
+                post_text: beerReview,
+                likes: 0,
+                rating: beerRating,
+                file_name: beerImage,
+                date_created: date,
+                user_id: userId
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -45,13 +50,20 @@ const  newPostFormHandler = async (event) => {
 const commentFormHandler = async (event) => {
     event.preventDefault();
 
-    const comment = document.querySelector('#comment-input').value.trim();
+    const comment_text = document.getElementById('new-comment').value.trim();
+    const user_id = 1;
+    const post_id = 1;
+    const date = new Date();
 
-    if (comment) {
+    
+    if (comment_text && user_id && post_id && date) {
         const response = await fetch('/api/comments', {
             method: 'POST',
             body: JSON.stringify({
-                comment
+                comment_text: comment_text,
+                user_id: user_id,
+                post_id: post_id,
+                date: date
             }),
             headers: {
                 'Content-Type': 'application/json'
