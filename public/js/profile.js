@@ -16,17 +16,20 @@ const  newPostFormHandler = async (event) => {
 
     const beerName = document.querySelector('#beer-name-input').value.trim();
     const beerReview = document.querySelector('#beer-review-input').value.trim();
-    const beerRating = document.querySelector('#beer-rating-input').value.trim();
-    const beerImage = document.querySelector('#beer-image-input').value.trim();
+    const beerRating = document.querySelector('#beer-rating-input').value;
+    const beerImage = "beer1"; 
+    const date = new Date();
 
-    if (beerName && beerReview && beerRating && beerImage) {
+    if (beerName && beerReview && beerRating && beerImage && date) {
         const response = await fetch('/api/posts', {
             method: 'POST',
             body: JSON.stringify({
-                beerName,
-                beerReview,
-                beerRating,
-                beerImage
+                title: beerName,
+                post_text: beerReview,
+                likes: 0,
+                rating: beerRating,
+                file_name: beerImage,
+                date_created: date,
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -43,28 +46,34 @@ const  newPostFormHandler = async (event) => {
 
 // function for commentFormHandler
 const commentFormHandler = async (event) => {
+
     event.preventDefault();
 
-    const comment = document.querySelector('#comment-input').value.trim();
+        const comment_text = document.getElementById('new-comment').value.trim();
+        const post_id = 1;
+        const date = new Date();
 
-    if (comment) {
-        const response = await fetch('/api/comments', {
-            method: 'POST',
-            body: JSON.stringify({
-                comment
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+    
+        if (comment_text && post_id && date) {
+            const response = await fetch('/api/comments', {
+                method: 'POST',
+                body: JSON.stringify({
+                    comment_text: comment_text,
+                    post_id: post_id,
+                    date: date
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
 
-        if (response.ok) {
+            if (response.ok) {
             document.location.replace('/profile');
-        } else {
-            alert('Failed to create comment');
-        }
-    }
-};
+            } else {
+                alert('Failed to create comment');
+            }
+    };
+}
 
 // function for commentButton
 function commentButton(event) {
@@ -83,12 +92,9 @@ document
     .querySelector('#new-post-button')
     .addEventListener('click', newPostButton);
 
-// Event Listener for commentButton
 document
     .querySelector('#comment-button')
     .addEventListener('click', commentButton);
-
-
 
 
 // Event Listener for newPostFormHandler
@@ -98,7 +104,15 @@ document
 
 // Event Listener for commentFormHandler
 document
-    .querySelector('#comment-form')
-    .addEventListener('submit', commentFormHandler);
-
-    
+    .querySelectorAll('.comment-forms')
+    .forEach(item => {
+        item.addEventListener('submit', commentFormHandler);
+    });
+// Event Listener for commentButton
+/*
+document
+    .querySelectorAll('.comment-button')
+    .forEach(item => {
+        item.addEventListener('click', commentButton)
+    });
+*/

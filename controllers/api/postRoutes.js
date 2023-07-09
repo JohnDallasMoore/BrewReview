@@ -57,7 +57,7 @@ router.post('/', checkAuthenticated, async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
-   //   user_id: req.session.user_id,
+      user_id: req.session.userId,
     });
     res.status(200).json(newPost);
   } catch (err) {
