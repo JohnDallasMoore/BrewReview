@@ -3,11 +3,11 @@ const { Comment } = require('../../models');
 
 //create a new comment
 router.post('/', async (req, res) => {
-  const commentDate = new Date();
+  console.log(req.session.userId);
     try {
       const newComment= await Comment.create({
-        ...req.body,
-        date: commentDate,
+        user_id: req.session.userId,
+        ...req.body
       });
       res.status(200).json(newComment);
     } catch (err) {

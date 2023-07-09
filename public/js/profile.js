@@ -18,10 +18,9 @@ const  newPostFormHandler = async (event) => {
     const beerReview = document.querySelector('#beer-review-input').value.trim();
     const beerRating = document.querySelector('#beer-rating-input').value;
     const beerImage = "beer1"; 
-    const userId = 1;
     const date = new Date();
 
-    if (beerName && beerReview && beerRating && beerImage && userId && date) {
+    if (beerName && beerReview && beerRating && beerImage && date) {
         const response = await fetch('/api/posts', {
             method: 'POST',
             body: JSON.stringify({
@@ -31,7 +30,6 @@ const  newPostFormHandler = async (event) => {
                 rating: beerRating,
                 file_name: beerImage,
                 date_created: date,
-                user_id: userId
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -48,35 +46,34 @@ const  newPostFormHandler = async (event) => {
 
 // function for commentFormHandler
 const commentFormHandler = async (event) => {
+
     event.preventDefault();
 
-    const comment_text = document.getElementById('new-comment').value.trim();
-    const user_id = 1;
-    const post_id = 1;
-    const date = new Date();
+        const comment_text = document.getElementById('new-comment').value.trim();
+        const post_id = 1;
+        const date = new Date();
 
     
-    if (comment_text && user_id && post_id && date) {
-        const response = await fetch('/api/comments', {
-            method: 'POST',
-            body: JSON.stringify({
-                comment_text: comment_text,
-                user_id: user_id,
-                post_id: post_id,
-                date: date
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        if (comment_text && post_id && date) {
+            const response = await fetch('/api/comments', {
+                method: 'POST',
+                body: JSON.stringify({
+                    comment_text: comment_text,
+                    post_id: post_id,
+                    date: date
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
 
-        if (response.ok) {
+            if (response.ok) {
             document.location.replace('/profile');
-        } else {
-            alert('Failed to create comment');
-        }
-    }
-};
+            } else {
+                alert('Failed to create comment');
+            }
+    };
+}
 
 // function for commentButton
 function commentButton(event) {
@@ -95,12 +92,9 @@ document
     .querySelector('#new-post-button')
     .addEventListener('click', newPostButton);
 
-// Event Listener for commentButton
 document
     .querySelector('#comment-button')
     .addEventListener('click', commentButton);
-
-
 
 
 // Event Listener for newPostFormHandler
@@ -110,7 +104,15 @@ document
 
 // Event Listener for commentFormHandler
 document
-    .querySelector('#comment-form')
-    .addEventListener('submit', commentFormHandler);
-
-    
+    .querySelectorAll('.comment-forms')
+    .forEach(item => {
+        item.addEventListener('submit', commentFormHandler);
+    });
+// Event Listener for commentButton
+/*
+document
+    .querySelectorAll('.comment-button')
+    .forEach(item => {
+        item.addEventListener('click', commentButton)
+    });
+*/
