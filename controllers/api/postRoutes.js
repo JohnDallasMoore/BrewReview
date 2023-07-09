@@ -53,7 +53,7 @@ router.get('/:id', checkAuthenticated, async (req, res) => {
 
 //create a new post
 
-router.post('/', checkAuthenticated, async (req, res) => {
+router.post('/',  async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,

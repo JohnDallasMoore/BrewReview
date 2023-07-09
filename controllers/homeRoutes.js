@@ -61,6 +61,9 @@ router.get('/dashboard', checkAuthenticated, async (req, res) => {
     const postData = await Post.findAll({include: [
       {
         model: Comment,
+        include: [
+          { model: User }
+        ]
       },
       {
         model: User,
