@@ -22,8 +22,8 @@ Brew Review is a beer review app that allows users to post reviews of beers they
 <a id='installation'></a>
 ## Installation
 
-No installation required.  You can deploy the app using the link below.
-
+No installation required.  You can deploy the app using the link below.<br>
+[Brew Review](https://brewreview-c780e18c5286.herokuapp.com/)
 
 ---
 

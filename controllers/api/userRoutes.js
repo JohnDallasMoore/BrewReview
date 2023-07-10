@@ -46,9 +46,9 @@ router.post('/', async (req, res) => {
       req.session.name = user.name;
       req.session.userId = user.id;
 
-      res.status(200).json(userData);
+      res.redirect('/dashboard');
     });
-    res.render('profile', { user, loggedIn: req.session.loggedIn });
+    
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
